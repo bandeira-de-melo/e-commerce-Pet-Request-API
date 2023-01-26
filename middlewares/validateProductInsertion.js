@@ -1,4 +1,4 @@
-
+import { sessionsAdminCollection } from "../database/database"
 export const validateProductInsertion = async (req, res, next)=>{
     const {authorization} = req.headers
     if(!authorization) return res.status(422).send("A bearer token must be sent by request headers")
@@ -13,7 +13,7 @@ export const validateProductInsertion = async (req, res, next)=>{
         adminInfo = admin
     } catch (error) {
         console.error(error)
-        res.status(500).send("Error on the server side.")
+        res.status(500).send("Error on the server side")
     }
     res.locaols.adminInfo = adminInfo
     next()
