@@ -1,6 +1,10 @@
 import { sessionsAdminCollection, adminsCollection } from "../database/database"
 export const validateProductInsertion = async (req, res, next)=>{
+    
+    const product = req.body
+    if(!product) return res.status(422).send("You must send a json object by req body")
     const {authorization} = req.headers
+    
     if(!authorization) return res.status(422).send("A bearer token must be sent by request headers")
     const token = authorization.replace("Bearer ", '')
     let adminInfo;
@@ -15,6 +19,7 @@ export const validateProductInsertion = async (req, res, next)=>{
         console.error(error)
         res.status(500).send("Error on the server side")
     }
-    res.locaols.adminInfo = adminInfo
+    res.locals.adminInfo = adminInfo
+    res.locals.product = product
     next()
 }
