@@ -15,4 +15,4 @@ const db = mongoClient.db()
 
 export const usersCollection = db.collection('users')
 export const productsCollection = db.collection('products')
-
+export const sessionsAdminCollection = db.collection('sessions-admin')
