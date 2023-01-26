@@ -6,4 +6,4 @@ import { productSchema } from "../schemas/productSchema";
 const router = Router()
 
 
-router.post("/insert-product", validateProductInsertion, productSchema, productIsertionController)
+router.post("/insert-product", validateProductInsertion, validateProduct(productSchema), productIsertionController)

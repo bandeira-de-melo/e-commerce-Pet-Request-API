@@ -6,3 +6,4 @@ export const productSchema = joi.object({
     description: joi.string().min(8).required(),
     details: joi.array().items(joi.string()).required()
 })
+
