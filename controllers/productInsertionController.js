@@ -13,6 +13,7 @@ export const productIsertionController = async (req, res)=>{
             adminId: adminInfo.adminId,
             createdAt: dayjs().format('MMM D, YYYY h:mm A')
         })
+        res.status(201).send("Product added to the DB successfully.")
     } catch (error) {
         console.error(error)
         res.sendStatus(500)
