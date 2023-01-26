@@ -3,7 +3,10 @@ import { productIsertionController } from "../controllers/productInsertionContro
 import { validateProductInsertion } from "../middlewares/validateProductInsertion";
 import { productSchema } from "../schemas/productSchema";
 
-const router = Router()
+const adminsRouter = Router()
 
 
-router.post("/insert-product", validateProductInsertion, validateProduct(productSchema), productIsertionController)
+adminsRouter.post("/admins-signup")
+adminsRouter.post("/insert-product", validateProductInsertion, validateProduct(productSchema), productIsertionController)
+
+export default adminsRouter
