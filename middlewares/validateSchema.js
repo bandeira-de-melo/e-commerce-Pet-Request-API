@@ -1,7 +1,8 @@
 
 
-export const validateSchema = async(schema, data)=>{
+export const validateSchema = async(schema)=>{
     return (req, res, next)=>{
+        const data = req.body
         const {error, value} = schema.validate(data,{abortEarly: false})
         if(error){
             const errors = error.map(err => err)
