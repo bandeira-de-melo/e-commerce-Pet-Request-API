@@ -1,5 +1,5 @@
 
-import { preAdminsCollection } from "../database/database"
+import { preAdminsCollection } from "../database/database.js"
 
 export const adminSignUpValidation = async (req, res, next)=> {
     const {username, password} = req.body

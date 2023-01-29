@@ -1,4 +1,4 @@
-import { sessionsAdminCollection, adminsCollection } from "../database/database"
+import { sessionsAdminCollection, adminsCollection } from "../database/database.js"
 export const validateProductInsertion = async (req, res, next)=>{
     
     const product = req.body

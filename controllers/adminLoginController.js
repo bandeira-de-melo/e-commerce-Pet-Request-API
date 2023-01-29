@@ -1,4 +1,4 @@
-import { sessionsAdminCollection } from "../database/database"
+import { sessionsAdminCollection } from "../database/database.js"
 
 export const adminLoginController = async (req, res) =>{
     const userInAdmins = res.locals.adminInfo

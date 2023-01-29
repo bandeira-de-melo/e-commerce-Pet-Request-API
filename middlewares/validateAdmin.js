@@ -1,4 +1,4 @@
-import { adminsCollection } from "../database/database"
+import { adminsCollection } from "../database/database.js"
 
 
 export const validateAdmin = async(req, res, next)=>{
@@ -10,7 +10,7 @@ export const validateAdmin = async(req, res, next)=>{
     try {
         userInAdmins = await adminsCollection.findOne({password: password})
         if(!userInAdmins) return res.status(401).send("Wrong username or password.")
-        res.status(200).send("Logged in successfully.")
+        return res.status(200).send("Logged in successfully.")
     } catch (error) {
         console.error(error)
         res.status(500).send("Error on the server side.")
