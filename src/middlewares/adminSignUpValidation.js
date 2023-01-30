@@ -1,5 +1,5 @@
 
-import { preAdminsCollection } from "../database/database.js"
+import { adminsCollection } from "../database/database.js"
 
 export const adminSignUpValidation = async (req, res, next)=> {
     const {username, password} = req.body
@@ -7,7 +7,7 @@ export const adminSignUpValidation = async (req, res, next)=> {
     if(!username || !password)return res.status(422).send("You must enter an admin username and passoword.")
     
     try {
-        const adminIndb = await preAdminsCollection.findOne({username: username})
+        const adminIndb = await adminsCollection.findOne({username: username})
         if(!adminIndb) return res.status(401).send("Wrong username or password.")
         
         if(password !== adminIndb.password){

@@ -1,9 +1,9 @@
-import Joi from "joi"
+
 
 export const validateSchema = (schema)=>{
     return (req, res, next)=>{
         const data = req.body
-        const {error, value} = Joi.validate(data, schema,{abortEarly: false})
+        const {error, value} = schema.validate(data,{abortEarly: false})
         if(error){
             const errors = error.details.map(err => err)
             console.log(errors)

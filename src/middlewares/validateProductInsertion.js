@@ -6,7 +6,7 @@ export const validateProductInsertion = async (req, res, next)=>{
     const {authorization} = req.headers
     
     if(!authorization) return res.status(422).send("A bearer token must be sent by request headers")
-    const token = authorization.replace("Bearer ", '')
+    const token = authorization.replace("Bearer ", "")
     let adminInfo;
 
     try {
