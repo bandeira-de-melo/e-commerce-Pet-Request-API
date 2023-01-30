@@ -1,7 +1,7 @@
 
 
-export const validateSchema = (schema)=>{
-    return (req, res, next)=>{
+export const validateSchema = (schema) => {
+    return (req, res, next) => {
         const data = req.body
         const {error, value} = schema.validate(data,{abortEarly: false})
         if(error){
