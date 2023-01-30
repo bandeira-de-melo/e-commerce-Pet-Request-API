@@ -1,4 +1,4 @@
-import { productsCollection } from "../database/database.js"
+import { productsCollection } from "../../database/database.js"
 import dayjs from "dayjs"
 
 export const productIsertionController = async (req, res)=>{
